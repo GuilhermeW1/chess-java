@@ -10,11 +10,11 @@ import boardgame.Position;
  *
  * @author guilherme
  */
-public class ChessPostition {
+public class ChessPosition {
     private char column;
     private int row;
     
-    public ChessPostition(char column, int row) {
+    public ChessPosition(char column, int row) {
         if (column < 'a' || column > 'h' || row < 1 || row > 8) {
             throw new ChessException("Error instatntiating chess position, invalid fileds");
         }
@@ -35,8 +35,8 @@ public class ChessPostition {
         return new Position(8 - row, column - 'a');
     }
     
-    protected static ChessPostition fromPosition(Position position) {
-        return new ChessPostition((char)('a' - position.getColumn()), 8 - position.getRow());
+    protected static ChessPosition fromPosition(Position position) {
+        return new ChessPosition((char)('a' - position.getColumn()), 8 - position.getRow());
     }
     
     @Override 
